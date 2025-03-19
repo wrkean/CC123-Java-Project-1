@@ -93,7 +93,6 @@ public class Problem3 {
                 repeat = false;
                 break;
             }
-            System.out.println("");
         }
         console.close();
     }
