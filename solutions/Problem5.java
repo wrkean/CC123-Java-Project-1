@@ -14,6 +14,10 @@ public class Problem5 {
         while (repeat) {
             System.out.print("Enter an integer: ");
             num = console.nextInt();
+            if (num < 0) {
+                System.out.println("Only enter positive integers.");
+                continue;
+            }
             
             for (n = 1; n <= num; n++) {
                 sumProperDivisors = 0;      // Ensure for each iteration, this starts at 0
@@ -28,7 +32,7 @@ public class Problem5 {
                 if (sumProperDivisors == n) 
                     System.out.print(n + " ");
             }
-            
+
             System.out.println("");
             System.out.print("Do you want to repeat again? (y/n): ");
 
