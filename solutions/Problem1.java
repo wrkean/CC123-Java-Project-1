@@ -62,5 +62,7 @@ public class Problem1 {
             "Take-home pay: %.2f\n",
             grossPay, whForSST, whForFIT, whForSIT, WITHHELD_UDPW, whForHI, takeHomePay
         );
+
+        console.close();
     }
 }
