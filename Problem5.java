@@ -1,9 +1,9 @@
-package solutions;
+
 
 import java.util.Scanner;
 
 public class Problem5 {
-    public static void solve() {
+    public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         int m;
         int n;
@@ -19,6 +19,7 @@ public class Problem5 {
                 continue;
             }
             
+            System.out.print("Perfect integers from 1 to " + num + ": ");
             for (n = 1; n <= num; n++) {
                 sumProperDivisors = 0;      // Ensure for each iteration, this starts at 0
 

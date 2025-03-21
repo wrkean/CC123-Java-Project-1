@@ -1,16 +1,18 @@
-package solutions;
+
 
 import java.util.Scanner;
 
 public class Problem4 {
-    public static void solve() {
+    public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         char choice;
         boolean running = true;
         int num1;
         int num2;
         int res;
-        int sum = 0;
+        double average;
+        int avrDivisor;     // Initialized to 1 to prevent division by Zero
+        int sum;
         int squared;
         char firstLet, secondLet;
 
@@ -25,6 +27,8 @@ public class Problem4 {
                 "f. Exit"
             );
             choice = console.next().charAt(0);
+            avrDivisor = 0;
+            sum = 0;
 
             switch (Character.toUpperCase(choice)) {
             case 'A':
@@ -35,14 +39,25 @@ public class Problem4 {
                 // Ensure num1 < num2
                 if (num1 > num2) {
                     System.out.println("ERROR! First number is greater than second number!");
-                    console.close();
-                    return;
+                    continue;
                 }
                 
                 System.out.print("Odd numbers: ");
                 for (int i = num1; i <= num2; i++) {
-                    if (i % 2 == 1) System.out.print(i + " ");
+                    if (i % 2 == 1) {
+                        System.out.print(i + " ");
+                        sum += i;
+                        avrDivisor++;
+                    };
                 }
+
+                if (avrDivisor != 0)
+                    average = (float) sum / avrDivisor;
+                else
+                    average = 0;
+
+                System.out.println("\nSum: " + sum);
+                System.out.println("Average: " + average);
                 System.out.println("");
                 break;
             case 'B':
@@ -53,14 +68,25 @@ public class Problem4 {
                 // Ensure num1 < num2
                 if (num1 > num2) {
                     System.out.println("ERROR! First number is greater than second number!");
-                    console.close();
-                    return;
+                    continue;
                 }
                 
-                System.out.print("Odd numbers: ");
+                System.out.print("Even numbers: ");
                 for (int i = num1; i <= num2; i++) {
-                    if (i % 2 == 0) System.out.print(i + " ");
+                    if (i % 2 == 0) {
+                        System.out.print(i + " ");
+                        sum += i;
+                        avrDivisor++;
+                    };
                 }
+
+                if (avrDivisor != 0)
+                    average = (float) sum / avrDivisor;
+                else
+                    average = 0;
+
+                System.out.println("\nSum: " + sum);
+                System.out.println("Average: " + average);
                 System.out.println("");
                 break;
 
@@ -71,8 +97,7 @@ public class Problem4 {
                 // Ensure it isn't a negative number
                 if (num1 < 0) {
                     System.out.println("The number is negative!");
-                    console.close();
-                    return;
+                    continue;
                 }
                 
                 res = num1;
@@ -99,7 +124,15 @@ public class Problem4 {
             case 'E':
                 System.out.print("Enter two letters: ");
                 firstLet = console.next().charAt(0);
+                if (!(firstLet >= 'A' && firstLet <= 'Z' || firstLet >= 'a' && firstLet <= 'z')) {
+                    System.out.println("That is not a number!");
+                    continue;
+                }
                 secondLet = console.next().charAt(0);
+                if (!(secondLet >= 'A' && secondLet <= 'Z' || secondLet >= 'a' && secondLet <= 'z')) {
+                    System.out.println("That is not a number!");
+                    continue;
+                }
 
                 // Output uppercase letters
                 for (char chr = Character.toUpperCase(firstLet); chr <= Character.toUpperCase(secondLet); chr++) {

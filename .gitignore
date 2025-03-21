@@ -1,3 +1,2 @@
-# Ignore .class files
+# Ignore .class file
 *.class
-solutions/*.class

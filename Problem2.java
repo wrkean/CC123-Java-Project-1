@@ -1,10 +1,10 @@
-package solutions;
+
 
 import java.io.*;
 import java.util.Scanner;
 
 public class Problem2 {
-    public static void solve() throws IOException {
+    public static void main(String[] args) throws IOException {
         Scanner inFile = new Scanner(new FileReader("EmployeeData.txt"));
         PrintWriter outFile = new PrintWriter("EmployeeData.dat");
 

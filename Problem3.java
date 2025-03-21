@@ -1,9 +1,7 @@
-package solutions;
-
 import java.util.Scanner;
 
 public class Problem3 {
-    public static void solve() {
+    public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
 
         // Constants
@@ -70,8 +68,7 @@ public class Problem3 {
         
             default:
                 System.out.println("Error! Only enter P or R, case-insensitive.");
-                console.close();
-                return;
+                continue;
             }
 
             // Output

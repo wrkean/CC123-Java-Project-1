@@ -1,9 +1,7 @@
-package solutions;
-
 import java.util.Scanner;
 
 public class Problem1 {
-    public static void solve() {
+    public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         final double PAYRATE = 68.75;   // Pay rate per hour
         final int REG_HOURS_PER_WEEK = 40; // Regular working hours per week
